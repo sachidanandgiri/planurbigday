@@ -143,7 +143,6 @@ class UserModel extends CI_Model {
         $this->db->from('users');
         $this->db->where('id', $user_id);
         $query = $this->db->get();
-        //print_r($query->result()); exit;
         return $result = $query->row();
     }
 

@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends Base {
+require_once APPPATH . 'core/Base_controller.php';
+
+class User extends BaseController {
 
     public function __construct() {
         parent::__construct();
@@ -25,13 +27,13 @@ class User extends Base {
     public function dashboard() {
 
         if ($this->session->userdata('loggedUser')) {
-            $this->load->model('user_modal');
+            $this->load->model('UserModel');
             $this->global['pageTitle'] = ' My Account';
 
             $this->load->view('header', $this->global);
             $loggedUser_arr = $this->session->userdata('loggedUser');
             $user_id = $loggedUser_arr['id'];
-            $user_details = $this->user_modal->user_details();
+            $user_details = $this->UserModel->user_details();
             $data['row'] = $user_details;
             /* $order_details = $this->Cart_model->order_details();
               $data['order_details'] = $order_details; */
@@ -44,7 +46,7 @@ class User extends Base {
 
     public function login() {
         //print_r($_POST); die;
-        $ck = $this->user_modal->check_user();
+        $ck = $this->UserModel->check_user();
         //print_r($ck); exit;
         if ($ck == 0) {
             $this->session->set_flashdata('feedback', "Wrong Email ID or Password");
@@ -58,7 +60,7 @@ class User extends Base {
     }
 
     public function register() {   //print_r($_POST); die;
-        $ck = $this->user_modal->register_user();
+        $ck = $this->UserModel->register_user();
         //echo $ck; 
         if ($ck == 0) {
             $this->session->set_flashdata('feedback1', "User Already Registered");
@@ -87,7 +89,7 @@ class User extends Base {
 
     public function updateuser() {
 
-        $ck = $this->user_modal->update_user();
+        $ck = $this->UserModel->update_user();
         $this->session->set_flashdata('feedback', "Profile Updated Sucessfully");
         $this->session->set_flashdata('feedback_class', 'alert-success');
         redirect('user/userprofile');
@@ -101,7 +103,7 @@ class User extends Base {
             $this->load->view('header', $this->global);
             $loggedUser_arr = $this->session->userdata('loggedUser');
             $user_id = $loggedUser_arr['id'];
-            $user_details = $this->user_modal->user_details();
+            $user_details = $this->UserModel->user_details();
             $data['row'] = $user_details;
             /* $order_details = $this->Cart_model->order_details();
               $data['order_details'] = $order_details; */
@@ -136,12 +138,12 @@ class User extends Base {
                 $oldPassword = $this->input->post('oldPassword');
                 $newPassword = $this->input->post('newPassword');
                 $cNewPassword = $this->input->post('cNewPassword');
-                $pass = $this->user_modal->matchOldPassword($user_id);
+                $pass = $this->UserModel->matchOldPassword($user_id);
                 //print_r($pass); exit;
                 if ($pass->password == md5($oldPassword)) {
                     if ($newPassword == $cNewPassword) {
 
-                        if ($this->user_modal->updatepassword($newPassword, $user_id)) {
+                        if ($this->UserModel->updatepassword($newPassword, $user_id)) {
                             /* echo 'password updated Sucessfully'; */
 
                             $this->session->set_flashdata('feedback', "password updated Sucessfully");
