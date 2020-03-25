@@ -39,7 +39,7 @@
                             <li><a href="#">Newsletter</a></li>
                             <li><a href="#">My Account</a></li>
                             <li><a href="#">Change Password</a></li>
-                            <li class="last"><a href="#">Log Out</a></li>
+                            <li class="last"><a href="<?php echo base_url() ?>user/logout"">Log Out</a></li>
                         </ul>
                     </div>
                 </div>

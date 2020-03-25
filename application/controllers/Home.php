@@ -27,19 +27,22 @@ class Home extends CI_Controller {
 	
 	
 	   public function login() {
-        $this->global['pageTitle'] = ' login';
+		
+		if ($this->session->userdata('loggedUser')) {
+
+		redirect('home');
+		}
+		else {
+        $this->global['pageTitle'] = 'login';
         $this->load->view('header', $this->global);
         $this->load->view('login');
         $this->load->view('footer');
-    }
+	  }
+		
+      }
 	
-	   public function register() {
-        $this->global['pageTitle'] = ' register';
-        $this->load->view('header', $this->global);
-        $this->load->view('register');
-        $this->load->view('footer');
-    }
 	
+	  /*
 	   public function dashboard() {
         $this->global['pageTitle'] = ' dashboard';
         $this->load->view('header', $this->global);
@@ -54,6 +57,20 @@ class Home extends CI_Controller {
         $this->load->view('footer');
     }
 	
+	*/
+	
+	public function register() {
+		if ($this->session->userdata('loggedUser')) {
+
+		redirect('home');
+		}
+		else {
+        $this->global['pageTitle'] = ' register';
+        $this->load->view('header', $this->global);
+        $this->load->view('register');
+        $this->load->view('footer');
+	  }
+    }
     
 	 public function shop(){
 		$this->global['pageTitle'] = ' Shop';

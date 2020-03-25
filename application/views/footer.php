@@ -540,19 +540,38 @@
                 </a>
             </div>
         </div>
-        <form class="theme-form">
+		<?php
+                                if ($this->session->userdata('loggedUser')):
+                                    $loggedUser_arr = $this->session->userdata('loggedUser');
+                                    if ($this->session->userdata('updated_name')) {
+                                        $loggedUser_arr['name'] = $this->session->userdata('updated_name');
+                                    }
+                                    ?>
+		<h5 class="acc"><a href="#" class="d-block"><?= $loggedUser_arr['name'] ?></a></h5>
+		<h5 class="acc"><a href="<?php echo base_url() ?>user/dashboard" class="d-block">Dashboard</a></h5>
+		<h5 class="acc"><a href="<?php echo base_url() ?>user/userprofile" class="d-block">Profile</a></h5>
+        <h5 class="acc"><a href="<?php echo base_url() ?>user/logout" class="d-block">Logout</a></h5>		
+        
+		<?php else: ?>  
+		
+		   <form class="theme-form" action="<?php echo base_url() ?>user/login" method="post" >
+		
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Email" required="">
+			<input type="email" class="form-control" id="email1" name="username" placeholder="Email ID" required />  
             </div>
             <div class="form-group">
                 <label for="review">Password</label>
-                <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
+			<input type="password" class="form-control" id="password1" name="password" placeholder="Password" required/>	
+                
             </div>
-            <a href="#" class="btn btn-solid btn-solid-sm btn-block ">Login</a>
-            <h5 class="forget-class"><a href="forget_pwd.html" class="d-block">forget password?</a></h5>
-            <h5 class="forget-class"><a href="register.html" class="d-block">new to store? Signup now</a></h5>
-        </form>
+			<button type="submit" class="btn btn-solid btn-solid-sm btn-block" name="Login" value="Login">Login </button>
+            
+            <h5 class="forget-class"><a href="<?php echo base_url() ?>user/forget" class="d-block">forget password?</a></h5>
+            <h5 class="forget-class"><a href="<?php echo base_url() ?>register" class="d-block">new to store? Signup now</a></h5>
+        </form> 
+		
+		<?php endif; ?>	
     </div>
 </div>
 <!-- Add to wishlist bar end-->
@@ -591,7 +610,7 @@
                                         </div>
 
                                         <div class="upsell_payment">
-                                            <img src="<?php echo base_url ?>assets/images/payment_cart.png" class="img-fluid " alt="">
+                                            <img src="assets/images/payment_cart.png" class="img-fluid " alt="">
                                         </div>
                                     </div>
                                 </div>
