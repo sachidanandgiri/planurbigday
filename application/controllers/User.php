@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once APPPATH . 'core/Base_controller.php';
+require_once APPPATH . 'core/BaseController.php';
 
 class User extends BaseController {
 

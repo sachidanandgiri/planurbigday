@@ -1,6 +1,10 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-class UserModel extends CI_Model {
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+require_once APPPATH . 'core/BaseModel.php';
+
+class UserModel extends BaseModel {
 
     public function check_user() {
         $username = $this->input->post('username');
