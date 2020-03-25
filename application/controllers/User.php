@@ -1,21 +1,19 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class User extends Base {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('user_modal');
-        $this->load->model('home_modal');
-        $this->load->model('Cart_model');
+        $this->load->model('UserModel');
+        $this->load->model('HomeModel');
+        $this->load->model('CartModel');
     }
 
     public function index() {
-
         if (!$this->session->userdata('loggedUser')) {
             $this->global['pageTitle'] = 'Harvest Gold User Login AND Register ';
-           
+
             $this->load->view('header', $this->global);
             $this->load->view('login');
             $this->load->view('footer');
@@ -29,14 +27,14 @@ class User extends CI_Controller {
         if ($this->session->userdata('loggedUser')) {
             $this->load->model('user_modal');
             $this->global['pageTitle'] = ' My Account';
-            
+
             $this->load->view('header', $this->global);
             $loggedUser_arr = $this->session->userdata('loggedUser');
             $user_id = $loggedUser_arr['id'];
             $user_details = $this->user_modal->user_details();
             $data['row'] = $user_details;
             /* $order_details = $this->Cart_model->order_details();
-            $data['order_details'] = $order_details; */
+              $data['order_details'] = $order_details; */
             $this->load->view('dashboard', $data);
             $this->load->view('footer');
         } else {
@@ -99,14 +97,14 @@ class User extends CI_Controller {
 
         if ($this->session->userdata('loggedUser')) {
             $this->global['pageTitle'] = ' My Account';
-            
+
             $this->load->view('header', $this->global);
             $loggedUser_arr = $this->session->userdata('loggedUser');
             $user_id = $loggedUser_arr['id'];
             $user_details = $this->user_modal->user_details();
             $data['row'] = $user_details;
             /* $order_details = $this->Cart_model->order_details();
-            $data['order_details'] = $order_details; */
+              $data['order_details'] = $order_details; */
             $this->load->view('profile', $data);
             $this->load->view('footer');
         } else {
@@ -116,7 +114,7 @@ class User extends CI_Controller {
 
     public function loadChangePass() {
         $this->global['pageTitle'] = 'Change Password';
-        
+
         $this->load->view('header', $this->global);
         $this->load->view('changePassword');
         $this->load->view('footer');

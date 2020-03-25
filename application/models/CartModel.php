@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Cart_model extends CI_Model {
+class CartModel extends CI_Model {
 
     public function update_cart($rowid, $qty, $price, $amount) {
         $data = array(

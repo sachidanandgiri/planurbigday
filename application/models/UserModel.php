@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User_modal extends CI_Model {
+class UserModel extends CI_Model {
 
     public function check_user() {
         $username = $this->input->post('username');

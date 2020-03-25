@@ -126,5 +126,5 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('web_modal');
+$autoload['model'] = array('WebModel');
 

@@ -3,9 +3,8 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Home_modal extends CI_Model {
-
-  
+class HomeModel extends CI_Model {
+    
 }
 
 //  class end	
