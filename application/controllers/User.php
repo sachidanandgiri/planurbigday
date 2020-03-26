@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once APPPATH . 'core/BaseController.php';
-
+//User controller manages the user records
 class User extends BaseController {
 
     public function __construct() {
