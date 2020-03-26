@@ -2,6 +2,8 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//Home controller called without login
+
 class Home extends CI_Controller {
 
     public function __construct() {
