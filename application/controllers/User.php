@@ -14,11 +14,11 @@ class User extends BaseController {
 
     public function index() {
         if (!$this->session->userdata('loggedUser')) {
-            $this->global['pageTitle'] = 'Harvest Gold User Login AND Register ';
+            $this->global['pageTitle'] = 'Plan Your Big Day';
 
-            $this->load->view('header', $this->global);
+            $this->load->view('template/header', $this->global);
             $this->load->view('login');
-            $this->load->view('footer');
+            $this->load->view('template/footer');
         } else {
             redirect('user/dashboard');
         }
@@ -30,7 +30,7 @@ class User extends BaseController {
             $this->load->model('UserModel');
             $this->global['pageTitle'] = ' My Account';
 
-            $this->load->view('header', $this->global);
+            $this->load->view('template/header', $this->global);
             $loggedUser_arr = $this->session->userdata('loggedUser');
             $user_id = $loggedUser_arr['id'];
             $user_details = $this->UserModel->user_details();
@@ -38,7 +38,7 @@ class User extends BaseController {
             /* $order_details = $this->Cart_model->order_details();
               $data['order_details'] = $order_details; */
             $this->load->view('dashboard', $data);
-            $this->load->view('footer');
+            $this->load->view('template/footer');
         } else {
             redirect('home');
         }
@@ -100,7 +100,7 @@ class User extends BaseController {
         if ($this->session->userdata('loggedUser')) {
             $this->global['pageTitle'] = ' My Account';
 
-            $this->load->view('header', $this->global);
+            $this->load->view('template/header', $this->global);
             $loggedUser_arr = $this->session->userdata('loggedUser');
             $user_id = $loggedUser_arr['id'];
             $user_details = $this->UserModel->user_details();
@@ -108,7 +108,7 @@ class User extends BaseController {
             /* $order_details = $this->Cart_model->order_details();
               $data['order_details'] = $order_details; */
             $this->load->view('profile', $data);
-            $this->load->view('footer');
+            $this->load->view('template/footer');
         } else {
             redirect('home');
         }
@@ -117,9 +117,9 @@ class User extends BaseController {
     public function loadChangePass() {
         $this->global['pageTitle'] = 'Change Password';
 
-        $this->load->view('header', $this->global);
+        $this->load->view('template/header', $this->global);
         $this->load->view('changePassword');
-        $this->load->view('footer');
+        $this->load->view('template/footer');
     }
 
     function changePassword() {

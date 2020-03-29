@@ -57,6 +57,7 @@ $route['login']='home/login';
 $route['about']='home/about';
 $route['register']='home/register';
 $route['user/dashboard']='user/dashboard';
+$route['admin/dashboard']='dashboard/index';
 $route['user/profile']='user/userprofile';
 $route['shop']='home/shop';
 $route['product']='home/product';
