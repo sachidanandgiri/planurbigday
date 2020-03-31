@@ -55,14 +55,20 @@ $route['admin'] = "admin/admin";
 $route['translate_uri_dashes'] = FALSE;
 $route['login']='home/login';
 $route['about']='home/about';
-$route['register']='home/register';
-$route['user/dashboard']='user/dashboard';
+$route['signup-vendor']='home/signupvendor';
+$route['signup-couple']='home/signupcouple';
+
+$route['dashboard-vendor']='home/dashboardvendor';
+$route['dashboard-couple']='home/dashboardcouple';
+
+//$route['user/dashboard']='user/dashboard';
 $route['admin/dashboard']='dashboard/index';
 $route['user/profile']='user/userprofile';
+$route['planning']='home/planning';
+$route['faq']='home/faq';
 $route['shop']='home/shop';
 $route['product']='home/product';
 $route['blog']='home/blog';
 $route['post']='home/post';
-$route['shop/cart']='home/cart';
-$route['shop/checkout']='home/checkout';
+$route['pricing']='home/pricing';
 $route['contact']='home/contact';

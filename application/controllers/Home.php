@@ -20,49 +20,11 @@ class Home extends CI_Controller {
 
     public function about() {
         $this->global['pageTitle'] = 'About Us';
-        $this->load->view('template/', $this->global);
+        $this->load->view('template/header', $this->global);
         $this->load->view('about_us');
         $this->load->view('template/footer');
     }
 
-    public function login() {
-        if ($this->session->userdata('loggedUser')) {
-            redirect('home');
-        } else {
-            $this->global['pageTitle'] = 'login';
-            $this->load->view('template/header', $this->global);
-            $this->load->view('login');
-            $this->load->view('template/footer');
-        }
-    }
-
-    /*
-      public function dashboard() {
-      $this->global['pageTitle'] = ' dashboard';
-      $this->load->view('header', $this->global);
-      $this->load->view('dashboard');
-      $this->load->view('footer');
-      }
-
-      public function profile() {
-      $this->global['pageTitle'] = ' profile';
-      $this->load->view('header', $this->global);
-      $this->load->view('profile');
-      $this->load->view('footer');
-      }
-
-     */
-
-    public function register() {
-        if ($this->session->userdata('loggedUser')) {
-            redirect('home');
-        } else {
-            $this->global['pageTitle'] = ' register';
-            $this->load->view('template/header', $this->global);
-            $this->load->view('register');
-            $this->load->view('template/footer');
-        }
-    }
 
     public function shop() {
         $this->global['pageTitle'] = ' Shop';
@@ -92,26 +54,84 @@ class Home extends CI_Controller {
         $this->load->view('template/footer');
     }
 
-    public function cart() {
+    public function pricing() {
         $this->global['pageTitle'] = ' cart';
         $this->load->view('template/header', $this->global);
-        $this->load->view('cart');
+        $this->load->view('pricing');
         $this->load->view('template/footer');
     }
 
-    public function checkout() {
-        $this->global['pageTitle'] = ' checkout';
-        $this->load->view('template/header', $this->global);
-        $this->load->view('checkout');
-        $this->load->view('template/footer');
-    }
-
+  
     public function contact() {
         $this->global['pageTitle'] = ' Contact Us';
         $this->load->view('template/header', $this->global);
         $this->load->view('contact_us');
         $this->load->view('template/footer');
     }
+	
+	public function planning() {
+        $this->global['pageTitle'] = ' Contact Us';
+        $this->load->view('template/header', $this->global);
+        $this->load->view('planning');
+        $this->load->view('template/footer');
+    }
+	
+	public function faq() {
+        $this->global['pageTitle'] = 'FAQ';
+        $this->load->view('template/header', $this->global);
+        $this->load->view('faq');
+        $this->load->view('template/footer');
+    }
+	
+	    public function login() {
+        if ($this->session->userdata('loggedUser')) {
+            redirect('home');
+        } else {
+            $this->global['pageTitle'] = 'login';
+            $this->load->view('template/header', $this->global);
+            $this->load->view('login');
+            $this->load->view('template/footer');
+        }
+    }
+
+
+    public function signupvendor() {
+        
+            $this->global['pageTitle'] = ' register';
+            $this->load->view('template/header', $this->global);
+            $this->load->view('signupvendor');
+            $this->load->view('template/footer');
+        
+    }
+	
+	 public function dashboardvendor() {
+        
+            $this->global['pageTitle'] = ' register';
+            $this->load->view('template/header', $this->global);
+            $this->load->view('dashboardvendor');
+            $this->load->view('template/footer');
+        
+    }
+	
+	
+	 public function signupcouple() {
+        
+            $this->global['pageTitle'] = ' register';
+            $this->load->view('template/header', $this->global);
+            $this->load->view('signupcouple');
+            $this->load->view('template/footer');
+        
+    }
+	
+	 public function dashboardcouple() {
+        
+            $this->global['pageTitle'] = ' register';
+            $this->load->view('template/header', $this->global);
+            $this->load->view('dashboardcouple');
+            $this->load->view('template/footer');
+        
+    }
+
 
 }
 

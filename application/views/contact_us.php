@@ -1,103 +1,104 @@
-
-
-<!-- breadcrumb start -->
-<section class="breadcrumb-section section-b-space">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title">
-                    <h2>contact</h2>
-                </div>
-            </div>
-            <div class="col-12">
-                <nav aria-label="breadcrumb" class="theme-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- breadcrumb End -->
-
-
-<!--section start-->
-<section class="contact-page section-b-space pb-0">
-    <div class="container">
-        <div class="row section-b-space">
-            <div class="col-lg-7 map">
-                <form class="theme-form">
-                    <div class="form-row">
-                        <div class="col-md-12">
-                            <label for="name">First Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter Your name" required="">
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="review">Phone number</label>
-                            <input type="text" class="form-control"  placeholder="Enter your number" required="">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control"  placeholder="Email" required="">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="review">Write Your Message</label>
-                            <textarea class="form-control" placeholder="Write Your Message" id="exampleFormControlTextarea1" rows="6"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <button class="btn btn-solid" type="submit">Send Your Message</button>
-                        </div>
+<div class="tp-page-head">
+        <!-- page header -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>Contact us</h1>
                     </div>
-                </form>
-            </div>
-            <div class="col-lg-5">
-                <div class="contact-right">
-                    <ul>
-                        <li>
-                            <div class="contact-icon"><i class="fa fa-phone" aria-hidden="true"></i>
-                                <h6>Contact Us</h6></div>
-                            <div class="media-body">
-                                <p>+91 123 - 456 - 7890</p>
-                                <p>+86 163 - 451 - 7894</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <h6>Address</h6></div>
-                            <div class="media-body">
-                                <p>ABC Complex,Near xyz, New York</p>
-                                <p>USA 123456</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                <h6>Address</h6></div>
-                            <div class="media-body">
-                                <p>Support@Shopcart.com</p>
-                                <p>info@shopcart.com</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon"><i class="fa fa-fax" aria-hidden="true"></i>
-                                <h6>Fax</h6></div>
-                            <div class="media-body">
-                                <p>Support@Shopcart.com</p>
-                                <p>info@shopcart.com</p>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row">
-
+    </div>
+    <!-- /.page header -->
+    <div class="tp-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Contact us</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid map px-0">
-        <iframe class="border-0 " src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1605.811957341231!2d25.45976406005396!3d36.3940974010114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550912388321"></iframe>
+    <div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="well-box">
+                        <p>Please fill out the form below and we will get back to you as soon as possible.</p>
+                        <form>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="control-label" for="first">First Name <span class="required">*</span></label>
+                                <input id="first" name="first" type="text" placeholder="First Name" class="form-control input-md" required>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class=" control-label" for="lastname">Last Name <span class="required">*</span></label>
+                                <div class=" ">
+                                    <input id="lastname" name="lastname" type="text" placeholder="Last name" class="form-control input-md" required>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class=" control-label" for="email">E-Mail <span class="required">*</span></label>
+                                <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md" required>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class=" control-label" for="phone">Phone <span class="required">*</span></label>
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control input-md" required>
+                            </div>
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class=" control-label" for="category">Category <span class="required">*</span></label>
+                                <select id="category" name="category" class="form-control selectpicker">
+                                    <option value="Couple">Couple</option>
+                                    <option value="Vendor">Vendor</option>
+                                    <option value="Advertisement">Advertisement</option>
+                                    <option value="Suggestion">Suggestion</option>
+                                </select>
+                            </div>
+                            <!-- Textarea -->
+                            <div class="form-group">
+                                <label class="  control-label" for="message">Message</label>
+                                <textarea class="form-control" rows="6" id="message" name="message">Write Your Message</textarea>
+                            </div>
+                            <!-- Button -->
+                            <div class="form-group">
+                                <button id="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 contact-info">
+                    <div class="well-box">
+                        <ul class="listnone">
+                            <li class="address">
+                                <h2><i class="fa fa-map-marker"></i>Location</h2>
+                                <p>1228 Hawks Nest Lane Saint Louis, MO 63143</p>
+                            </li>
+                            <li class="email">
+                                <h2><i class="fa fa-envelope"></i>E-Mail</h2>
+                                <p>Info@weddingvendor.com</p>
+                            </li>
+                            <li class="call">
+                                <h2><i class="fa fa-phone"></i>Contact</h2>
+                                <p>+1800-123-4567</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="well-box">
+                        <h2>Need Help ?</h2>
+                        <p>Are you an advertiser enquiring about advertising in You &amp; Your Wedding or on weddingvendor? Please <a href="#">click here </a>to contact the advertising team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
-<!--Section ends-->
+    <div class="map" id="googleMap"></div>
